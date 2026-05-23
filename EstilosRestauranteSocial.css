@@ -596,3 +596,36 @@ input:focus {
     padding: 8px 0;
   }
 }
+
+/* Ediciones para hacer más adelante */
+.button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 14px;
+  padding: 20px;
+  background: #fff;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: #ff7a00
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.donation-card{
+  margin-bottom: 16px;
+}
+
+
+
+
+
+
+
+
+
