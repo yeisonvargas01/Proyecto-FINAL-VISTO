@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mesa Solidaria | Restaurante con Impacto Social</title>
+  <link rel="stylesheet" href="EstilosRestauranteSocial.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">🧡 Mesa Solidaria</div>
+      <nav class="menu-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Menú</a>
+        <a href="#pedido">Realizar Pedido</a>
+        <a href="#impacto">Nuestro Impacto</a>
+        <a href="#donar">Donar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <article class="hero-info">
+          <span class="pill">💎 Impacto Social en Cada Comida</span>
+          <h1>Comida deliciosa que transforma vidas</h1>
+          <p>
+            En Mesa Solidaria, cada plato que sirves ayuda a combatir el hambre y reducir
+            el desperdicio de alimentos. Únete a nuestra misión de crear un mundo más justo.
+          </p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-white">Ver Menú del Día</a>
+            <a href="#impacto" class="btn btn-outline-white">Conocer Más</a>
+          </div>
+        </article>
+
+        <div class="hero-stats">
+          <article class="stat-card">🍽️<h3 id="heroComidas">5,200+</h3><p>Comidas Donadas</p></article>
+          <article class="stat-card">👥<h3 id="heroPersonas">1,800+</h3><p>Personas Ayudadas</p></article>
+          <article class="stat-card">💚<h3 id="heroRescate">320kg</h3><p>Comida Rescatada</p></article>
+          <article class="stat-card">🌱<h3 id="heroDesperdicio">85%</h3><p>Menos Desperdicio</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="impacto" class="impact section">
+      <div class="container">
+        <h2>Nuestro Impacto en la Comunidad</h2>
+        <p class="section-subtitle">
+          Cada día trabajamos para crear un cambio positivo. Estos números representan vidas tocadas.
+        </p>
+
+        <div class="impact-grid">
+          <article class="impact-card"><span>👥</span><h3 id="impactPersonas">1,800+</h3><p>Personas alimentadas</p></article>
+          <article class="impact-card"><span>🌿</span><h3 id="impactKg">320kg</h3><p>Comida rescatada</p></article>
+          <article class="impact-card"><span>🧡</span><h3 id="impactComidas">5,200+</h3><p>Comidas donadas</p></article>
+          <article class="impact-card"><span>📈</span><h3 id="impactValor">$45,000</h3><p>Valor social generado</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="section menu-section">
+      <div class="container">
+        <h2>Menú de Hoy</h2>
+        <p class="section-subtitle">Platos deliciosos con propósito. Cada comida ayuda a nuestra comunidad.</p>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="todos">Todo el Menú</button>
+          <button class="filter-btn" data-filter="rescatada">Comida Rescatada</button>
+          <button class="filter-btn" data-filter="paga">Paga lo que Puedas</button>
+        </div>
+
+        <div id="menuCards" class="menu-grid"></div>
+      </div>
+    </section>
+
+    <section id="pedido" class="section order-section">
+      <div class="container">
+        <h2>🛒 Realiza tu Pedido Solidario</h2>
+        <p class="section-subtitle">
+          Por cada 3 pedidos realizados, Mesa Solidaria dona una comida a una persona en situación vulnerable.
+        </p>
+
+        <div class="order-box">
+          <h3>Datos del Cliente</h3>
+          <div class="inputs-grid">
+            <div>
+              <label for="nombreCliente">Nombre del cliente</label>
+              <input id="nombreCliente" type="text" placeholder="Ingresa tu nombre" />
+            </div>
+            <div>
+              <label for="presupuestoCliente">Dinero disponible</label>
+              <input id="presupuestoCliente" type="number" min="0" placeholder="Ingresa tu presupuesto" />
+            </div>
+          </div>
+
+          <h3>Selecciona tus Productos</h3>
+          <div id="orderProducts" class="order-products"></div>
+
+          <div class="total-box">
+            <div>
+              <p>Total a pagar:</p>
+              <h4 id="totalPagar">$ 0</h4>
+              <small id="resumenDescuento">Sin descuento aplicado.</small>
+            </div>
+            <button id="btnRealizarPedido" class="btn btn-primary">🛒 Realizar Pedido</button>
+          </div>
+
+          <p id="mensajePedido" class="message"></p>
+        </div>
+
+        <div class="thanks-box">
+          <h3>💖 Gracias por tu Apoyo</h3>
+          <p>
+            Cada pedido que realizas nos ayuda a mantener nuestros programas sociales y alimentar a más personas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="donar" class="section donate-section">
+      <div class="container">
+        <h2>Únete a Nuestra Misión</h2>
+        <p class="section-subtitle">
+          Tu donación nos permite servir más comidas a quienes más lo necesitan y rescatar más alimentos.
+        </p>
+
+        <div class="donate-grid">
+          <article class="donation-card">
+            <h3>Haz una Donación</h3>
+
+            <div class="amount-grid">
+              <button class="donation-amount active" data-amount="10000">$10.000 <span>Alimenta 1 persona</span></button>
+              <button class="donation-amount" data-amount="20000">$20.000 <span>Alimenta 2 personas</span></button>
+              <button class="donation-amount" data-amount="50000">$50.000 <span>Alimenta 5 personas</span></button>
+              <button class="donation-amount" data-amount="100000">$100.000 <span>Alimenta 10 personas</span></button>
+            </div>
+
+            <label for="customDonation">O elige tu cantidad</label>
+            <input id="customDonation" type="number" min="0" placeholder="$ Cantidad personalizada" />
+
+            <div class="donation-summary">
+              <div>
+                <p>Tu donación:</p>
+                <h4 id="donationValue">$10.000</h4>
+              </div>
+              <p>Ayudarás a alimentar aproximadamente <strong id="peopleHelped">1</strong> personas</p>
+            </div>
+
+            <button id="btnDonar" class="btn btn-primary">🤍 Donar Ahora</button>
+            <p id="mensajeDonacion" class="message"></p>
+          </article>
+
+          <article class="transparency-card">
+            <h3>¿Dónde va tu donación?</h3>
+            <ul>
+              <li>🍽️ Comedor Comunitario: donamos comidas preparadas diariamente.</li>
+              <li>🥬 Banco de Alimentos: distribuimos ingredientes frescos rescatados.</li>
+              <li>🧡 Programa Infantil: meriendas nutritivas para niños vulnerables.</li>
+            </ul>
+            <div class="highlight-box">
+              <h4>Transparencia Total</h4>
+              <p>Publicamos informes mensuales detallando cómo se usa cada donación.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>🧡 Mesa Solidaria</h4>
+        <p>Transformando vidas a través de la comida. Combatimos el hambre y el desperdicio.</p>
+      </div>
+      <div>
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#impacto">Nuestro Impacto</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#donar">Donar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>📍 La Ceja, Antioquia</p>
+        <p>📞 +57 300 123 4567</p>
+        <p>✉ contacto@mesasolidaria.org</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Mesa Solidaria. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="FuncionalidadPagina.js"></script>
+</body>
+</html>
